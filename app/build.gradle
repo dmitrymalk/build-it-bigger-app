@@ -25,4 +25,5 @@ dependencies {
     // Added for AdMob
     compile 'com.google.android.gms:play-services:8.4.0'
     compile 'com.dmitrymalkovich.android:material-design-dimens:1.2'
+    compile project(":jokes-library")
 }
