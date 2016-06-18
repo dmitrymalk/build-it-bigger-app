@@ -15,16 +15,15 @@
         />
 
     <Button
+        android:id="@+id/button_show_joke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_text_view"
-        android:text="@string/button_text"
         android:onClick="tellJoke"
-
-        />
+        android:text="@string/button_text" />
 
     <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
+        android:id="@+id/ad_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
