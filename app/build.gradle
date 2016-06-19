@@ -21,9 +21,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(path: ':backend', configuration: 'android-endpoints')
     // Added for AdMob
+    compile project(":jokes-viewer")
     compile 'com.google.android.gms:play-services:8.4.0'
     compile 'com.dmitrymalkovich.android:material-design-dimens:1.2'
-    compile project(":jokes-library")
-    compile project(":jokes-viewer")
 }

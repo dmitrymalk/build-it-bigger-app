@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.dmitrymalkovich.android.jokes.viewer.JokeViewerActivity;
-import com.dmitrymalkovich.java.LaughFactory;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -33,9 +32,16 @@ public class MainActivityFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), JokeViewerActivity.class);
-                intent.putExtra(JokeViewerActivity.EXTRA_JOKE, LaughFactory.tellMeJoke());
-                startActivity(intent);
+
+                new RetrieveJokeTask(new RetrieveJokeTask.Listener() {
+
+                    @Override
+                    public void onJokeLoaded(String joke) {
+                        Intent intent = new Intent(getContext(), JokeViewerActivity.class);
+                        intent.putExtra(JokeViewerActivity.EXTRA_JOKE, joke);
+                        startActivity(intent);
+                    }
+                }).execute();
             }
         });
 

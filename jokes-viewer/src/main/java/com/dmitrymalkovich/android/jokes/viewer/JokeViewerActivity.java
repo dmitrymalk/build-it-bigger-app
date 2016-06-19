@@ -1,5 +1,6 @@
 package com.dmitrymalkovich.android.jokes.viewer;
 
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
