@@ -1,6 +1,5 @@
 package com.dmitrymalkovich.android.jokes.viewer;
 
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,7 +17,7 @@ public class JokeViewerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_joke_viewer);
 
         if (getIntent() != null && getIntent().hasExtra(EXTRA_JOKE)) {
-            TextView jokeTextView = ButterKnife.findById(this, R.id.joke);
+            TextView jokeTextView = ButterKnife.findById(this, R.id.text_view_joke);
             jokeTextView.setText(getIntent().getStringExtra(EXTRA_JOKE));
         }
 

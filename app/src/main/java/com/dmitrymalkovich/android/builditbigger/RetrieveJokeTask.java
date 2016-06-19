@@ -1,6 +1,7 @@
 package com.dmitrymalkovich.android.builditbigger;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.dmitrymalkovich.android.builditbigger.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -30,7 +31,7 @@ public class RetrieveJokeTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected String doInBackground(Void... params) {
-        if (myApiService == null) {  // Only do this once
+        if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
                     // options for running against local devappserver
@@ -45,15 +46,14 @@ public class RetrieveJokeTask extends AsyncTask<Void, Void, String> {
                             abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
                     });
-            // end options for devappserver
-
             myApiService = builder.build();
         }
 
         try {
             return myApiService.randomJoke().execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            Log.e(LOG_TAG, e.getMessage(), e);
+            return "";
         }
     }
 

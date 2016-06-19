@@ -10,7 +10,7 @@
     tools:context="com.dmitrymalkovich.android.jokes.viewer.JokeViewerActivity">
 
     <TextView
-        android:id="@+id/joke"
+        android:id="@+id/text_view_joke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
