@@ -10,8 +10,9 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<resources>
-    <string name="app_name">Build it Bigger</string>
-    <string name="instructions">Press the button for a delicious joke!</string>
-    <string name="button_text">Tell Joke</string>
-</resources>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment"
+    android:name="com.dmitrymalkovich.android.builditbigger.MainActivityFragmentWithAd"
+    tools:layout="@layout/fragment_main" android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
